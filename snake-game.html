@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Snake Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Smart Snake</h1>
+            <div class="score-container">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="high-score">High Score: <span id="highScore">0</span></div>
+                <div class="poison">Poison: <span id="poison">0</span></div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div id="gameOver" class="game-over">
+                <h2>Game Over!</h2>
+                <p>Your score: <span id="finalScore">0</span></p>
+                <button id="restartButton">Play Again</button>
+            </div>
+            
+            <div id="challengeModal" class="modal">
+                <div class="modal-content">
+                    <h2>Knowledge Challenge!</h2>
+                    <div id="challengeQuestion"></div>
+                    <textarea id="codeAnswer" placeholder="Write your answer here..." style="display: none;"></textarea>
+                    <div class="button-group">
+                        <button id="submitAnswer">Submit Answer</button>
+                        <button id="skipChallenge">Skip (-50 points)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <button id="startButton">Start Game</button>
+                <button id="pauseButton">Pause</button>
+            </div>
+            <div class="control-group">
+                <button id="usePoison" class="special-button">Use Poison (P)</button>
+                <button id="toggleChaseMode" class="special-button">Toggle Auto-Chase</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Snake automatically chases the rat (toggle with button)</li>
+                <li>Use arrow keys to manually control the snake</li>
+                <li>Catch the moving rat to grow and earn 20 points</li>
+                <li>Answer Python and AWS questions to earn rewards</li>
+                <li>Python questions give 100 points and make snake longer</li>
+                <li>AWS questions give poison to slow down the rat</li>
+                <li>Press 'P' or click the Poison button to use poison</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

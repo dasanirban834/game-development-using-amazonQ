@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  snake-game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8000"
+    restart: unless-stopped
